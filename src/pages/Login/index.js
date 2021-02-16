@@ -14,7 +14,7 @@ const Login = (props) => {
     if (window.location.hash) {
       const hash = getTokenFromUrl();
       const token = hash.access_token;
-      // window.location.hash = "";
+      window.location.hash = "";
       props.onInitToken(token);
     } else {
       return;
