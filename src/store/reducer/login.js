@@ -1,7 +1,8 @@
 import * as actionTypes from "../actions/actionTypes";
 
 const initState = {
-  SpotifyToken: null,
+  spotifyToken: null,
+  authenticated: false,
 };
 
 const reducer = (state = initState, action) => {
@@ -9,10 +10,13 @@ const reducer = (state = initState, action) => {
     case actionTypes.SET_SPOTIFY_TOKEN:
       return {
         ...state,
-        SpotifyToken: action.SpotifyToken,
+        spotifyToken: action.SpotifyToken,
+        authenticated: true,
       };
 
     default:
       return state;
   }
 };
+
+export default reducer;
