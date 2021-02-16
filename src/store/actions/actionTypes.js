@@ -1,0 +1,1 @@
+export const SET_SPOTIFY_TOKEN = "SET_SPOTIFY_TOKEN";
