@@ -16,6 +16,7 @@ const Login = (props) => {
       const token = hash.access_token;
       window.location.hash = "";
       props.onInitToken(token);
+      props.spotify.setAccessToken(token);
     } else {
       return;
     }
