@@ -1,9 +1,9 @@
 import * as actionTypes from "./actionTypes";
 
-export const setSpotifyToken = (token) => {
-  console.log(token);
+export const setSpotifyData = (token, userData) => {
   return {
-    type: actionTypes.SET_SPOTIFY_TOKEN,
-    SpotifyToken: token,
+    type: actionTypes.SET_SPOTIFY_DATA,
+    token,
+    userData,
   };
 };
