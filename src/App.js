@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Login from "./pages/Login/index";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import SpotifyWebApi from "spotify-web-api-js";
 
@@ -11,8 +12,8 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path="/Login" exact render={() => <Login spotify={Spotify} />} />
-        <Route path="/" exact />
-        <Route path="/" exact />
+        <Route path="/Home" exact component={Home} />
+        <Redirect from="/" to="/Login" exact />
       </Switch>
     </BrowserRouter>
   );
