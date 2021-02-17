@@ -14,9 +14,12 @@ const Login = (props) => {
     if (window.location.hash) {
       const hash = getTokenFromUrl();
       const token = hash.access_token;
+
       window.location.hash = "";
-      props.onInitToken(token);
+
       props.spotify.setAccessToken(token);
+
+      props.spotify.getMe().then((user) => props.onSpotifyLogin(token, user));
     } else {
       return;
     }
@@ -32,7 +35,8 @@ const Login = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onInitToken: (token) => dispatch(loginActions.setSpotifyToken(token)),
+    onSpotifyLogin: (token, userData) =>
+      dispatch(loginActions.setSpotifyData(token, userData)),
   };
 };
 
