@@ -1,9 +1,18 @@
 import React from "react";
+import { StyledDiv } from "./styles";
+
+import SideBar from "../../components/SideBar";
+import Player from "../../containers/Player/index";
+import Footer from "../../components/Footer/index";
 
 const home = () => {
   return (
     <div>
-      <h1>WE ARE IN THE HOME PAGE</h1>
+      <StyledDiv>
+        <SideBar />
+        <Player />
+      </StyledDiv>
+      <Footer />
     </div>
   );
 };
