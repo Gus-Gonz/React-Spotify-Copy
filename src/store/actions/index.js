@@ -1,1 +1,1 @@
-export { setSpotifyToken } from "./login";
+export { setSpotifyData } from "./login";
