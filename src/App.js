@@ -1,13 +1,21 @@
 import React, { useEffect } from "react";
 import Login from "./pages/Login/index";
-import { getTokenFromUrl } from "./pages/Login/utills";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import SpotifyWebApi from "spotify-web-api-js";
 
 const Spotify = new SpotifyWebApi();
 
 function App() {
-  return <Login spotify={Spotify} />;
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route path="/Login" exact render={() => <Login spotify={Spotify} />} />
+        <Route path="/" exact />
+        <Route path="/" exact />
+      </Switch>
+    </BrowserRouter>
+  );
 }
 
 export default App;
