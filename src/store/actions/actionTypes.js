@@ -1,1 +1,1 @@
-export const SET_SPOTIFY_TOKEN = "SET_SPOTIFY_TOKEN";
+export const SET_SPOTIFY_DATA = "SET_SPOTIFY_DATA";
