@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import logo from "../../assets/Logo/spotify-logo.svg";
+import { useHistory } from "react-router-dom";
 
 import { StyledDiv, StyledImg, StyledA } from "./styles";
 import { spotifyLoginUrl } from "./utills";
@@ -10,6 +11,8 @@ import * as loginActions from "../../store/actions/index";
 import { getTokenFromUrl } from "./utills";
 
 const Login = (props) => {
+  const history = useHistory();
+
   useEffect(() => {
     if (window.location.hash) {
       const hash = getTokenFromUrl();
@@ -25,12 +28,22 @@ const Login = (props) => {
     }
   }, [window.location.hash]);
 
-  return (
+  const sendUserToHome = () => history.push("/Home");
+
+  return props.spotifyToken ? (
+    <>{sendUserToHome()}</>
+  ) : (
     <StyledDiv>
       <StyledImg alt="Spotify-Logo" src={logo}></StyledImg>
       <StyledA href={spotifyLoginUrl}>LOGIN WITH SPOTIFY</StyledA>
     </StyledDiv>
   );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    spotifyToken: state.spotifyToken,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -40,4 +53,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
