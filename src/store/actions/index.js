@@ -1,1 +1,1 @@
-export { setSpotifyData } from "./login";
+export { setSpotifyUserData, setSpotifyPlayList } from "./login";
