@@ -5,7 +5,8 @@ import { StyledSideBarElement } from "./styles";
 const sideBarEle = ({ title, Icon }) => {
   return (
     <StyledSideBarElement>
-      <p>{title}</p>
+      {Icon ? <Icon /> : null}
+      {Icon ? <h4>{title}</h4> : <p>{title}</p>}
     </StyledSideBarElement>
   );
 };
