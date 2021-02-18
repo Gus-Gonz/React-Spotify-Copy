@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
-export const StyledDiv = styled.div`
+export const StyledFooter = styled.footer`
   position: fixed;
+  display: flex;
+  justify-content: space-between;
   bottom: 0;
-  height: 65px;
   width: 100%;
   background-color: #282828;
-  padding: 20px 15 px;
+  padding: 20px 15px;
+  box-sizing: border-box;
 `;

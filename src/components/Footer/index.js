@@ -1,12 +1,16 @@
 import React from "react";
 
-import { StyledDiv } from "./styles";
-
+import { StyledFooter } from "./styles";
+import PlayerControl from "./PlayerControls/index";
+import VolumeControl from "./VolumeControl/index";
+import SongDetails from "./SongDetails/index";
 const footer = () => {
   return (
-    <StyledDiv>
-      <h1> we are the footer</h1>
-    </StyledDiv>
+    <StyledFooter>
+      <SongDetails />
+      <PlayerControl />
+      <VolumeControl />
+    </StyledFooter>
   );
 };
 
