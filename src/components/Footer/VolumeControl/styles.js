@@ -6,4 +6,8 @@ export const StyledDiv = styled.div`
   align-items: center;
   color: white;
   flex: 0.3;
+
+  span {
+    color: green;
+  }
 `;

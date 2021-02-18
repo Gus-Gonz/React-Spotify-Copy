@@ -10,5 +10,10 @@ export const StyledDiv = styled.div`
   max-width: 300px;
   svg {
     padding: 0 2px;
+    cursor: pointer;
+  }
+  svg:hover {
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.2) !important;
   }
 `;
