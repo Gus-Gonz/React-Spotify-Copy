@@ -4,7 +4,7 @@ export const StyledDiv = styled.div`
   display: flex;
   align-items: center;
   color: white;
-  width: 300px;
+  max-width: 300px;
 
   &img {
     height: 60px;
