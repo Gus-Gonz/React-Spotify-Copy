@@ -1,11 +1,18 @@
 import React from "react";
+import logo from "../../assets/Logo/spotify-logo.png";
+import SideBarElement from "./SideBarElement";
 
-import { StyledDiv } from "./styles";
+import { StyledDiv, StyledImg, StyledLogoWrapper } from "./styles";
 
 const sideBar = () => {
   return (
     <StyledDiv>
-      <li>THIS IS THE SIDE BAR</li>
+      <StyledLogoWrapper>
+        <StyledImg src={logo} />
+      </StyledLogoWrapper>
+      <SideBarElement title="Home" />
+      <SideBarElement title="Search" />
+      <SideBarElement title="Your Library" />
     </StyledDiv>
   );
 };

@@ -7,5 +7,16 @@ export const StyledDiv = styled.div`
   background: #040404;
   color: white;
   min-width: 220px;
-  padding: 20px 20px;
+  padding: 0px 20px;
+`;
+
+export const StyledImg = styled.img`
+  margin: auto;
+  object-fit: contain;
+  padding: 10px;
+  height: 80px;
+`;
+
+export const StyledLogoWrapper = styled.div`
+  text-align: center;
 `;
