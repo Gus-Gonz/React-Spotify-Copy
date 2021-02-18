@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../assets/Logo/spotify-logo.png";
 import SideBarElement from "./SideBarElement";
+import { connect } from "react-redux";
 
 import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search";
@@ -13,7 +14,7 @@ import {
   StyledStronTitle,
 } from "./styles";
 
-const sideBar = () => {
+const sideBar = (props) => {
   return (
     <StyledDiv>
       <StyledLogoWrapper>
@@ -24,11 +25,17 @@ const sideBar = () => {
       <SideBarElement Icon={LibraryMusicIcon} title="Your Library" />
       <StyledStronTitle>PLAYLISTS</StyledStronTitle>
       <hr />
-      <SideBarElement title="Rock" />
-      <SideBarElement title="Pop" />
-      <SideBarElement title="Reggue" />
+      {props.playlists?.items?.map((playlist) => {
+        <SideBarElement title={playlist.name} />;
+      })}
     </StyledDiv>
   );
 };
 
-export default sideBar;
+const mapStateToProps = (state) => {
+  return {
+    playlists: state.playlists,
+  };
+};
+
+export default connect(mapStateToProps)(sideBar);
