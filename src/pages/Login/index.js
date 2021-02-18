@@ -20,7 +20,14 @@ const Login = (props) => {
 
       props.spotify.setAccessToken(token);
 
-      props.spotify.getMe().then((user) => props.onSpotifyLogin(token, user));
+      props.spotify
+        .getMe()
+        .then((user) => props.setSpotifyUserData(token, user));
+
+      props.spotify.getUserPlaylists().then((playlists) => {
+        console.log(playlists);
+        props.setSpotifyPlayList(playlists);
+      });
     } else {
       return;
     }
@@ -44,8 +51,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSpotifyLogin: (token, userData) =>
-      dispatch(loginActions.setSpotifyData(token, userData)),
+    setSpotifyUserData: (token, userData) =>
+      dispatch(loginActions.setSpotifyUserData(token, userData)),
+    setSpotifyPlayList: (playlists) =>
+      dispatch(loginActions.setSpotifyPlayList(playlists)),
   };
 };
 
