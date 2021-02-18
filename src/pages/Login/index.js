@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import logo from "../../assets/Logo/spotify-logo.svg";
+import logo from "../../assets/Logo/spotify-logo.png";
 import { Redirect } from "react-router-dom";
 
 import { StyledDiv, StyledImg, StyledA } from "./styles";
